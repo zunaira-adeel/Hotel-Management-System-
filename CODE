@@ -1,0 +1,140 @@
+#include<stdio.h>
+#include<conio.h>
+
+//Function 1
+void Roomregistration()
+{
+	 printf("\n------- HOTEL MANAGEMENT SYSTEM -------\t\t");
+		char name [50];
+		int i;
+		int roomtype;
+		int roomno;
+
+	//Taking CUTOMER NAME.
+
+	 	 printf("\nEnter Name %d:", name);
+	 	 scanf("\n %s", name);
+
+	 	 printf("You Entered:%s\n", name);
+
+	//ROOM TYPE
+
+	    	printf("\n Choose Your Room Type");
+	    	printf("\n 1.Single Room");
+	    	printf("\n 2.Double Room");
+	    	printf("\n 3.Deluxe Room");
+	    	printf("\n Enter your choice: ");
+	    	scanf("\n %d", &roomtype);
+
+
+    //ROOM NUMBER
+
+    		printf("\n Enter Room Number:");
+    		scanf("\n %d", &roomno);
+
+	//DISPLAY DETAILS
+			printf("\n Registration details ");
+			printf("\n Customer Name:%s", name);
+			printf("\n Room Number:%d", roomno);
+
+			if (roomtype==1)
+		    	printf("\nRoom Type : Single Room - Rs 3000");
+		    else if (roomtype==2)
+		    	printf("\nRoom Type : Double Room - Rs 6000");
+		    else if (roomtype==3)
+		    	printf("\nRoom Type : Deluxe Room - Rs 10,000");
+		    else
+		    	printf("Invalid Choice");
+
+		     scanf("%c", &roomtype);
+
+	 printf("\nRoom Registered Successfully!\n");
+
+}
+	//Function 2
+void Hotelmenu()
+{
+	int choice;
+    float total = 0;
+	float quantity;
+	float bill;
+
+	printf("\n------- HOTEL MENU -------\n");
+	printf("\n1. Tea - Rs 30\n");
+    printf("2. Coffee - Rs 50\n");
+    printf("3. Burger - Rs 150\n");
+    printf("4. Pizza - Rs 350\n");
+    printf("5. Cold Drink - Rs 200\n");
+    printf("6. Water - Rs 100\n");
+    printf("7. Exit\n");
+
+
+    printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+   	printf("Enter quantity: ");
+        scanf("%d", &quantity);
+
+        if (choice == 1)
+        	total = 30 * quantity;
+	    	printf("\nTotal Bill = Rs %.2f\n", total);
+
+    	else if(choice == 2)
+    		total = 50 * quantity;
+			printf("\nTotal Bill = Rs %.2f\n", total);
+
+    	else if(choice == 3)
+    		total = 150 * quantity;
+			printf("\nTotal Bill = Rs %.2f\n", total);
+
+
+    	else if (choice == 4)
+    		total = 350 * quantity;
+			printf("\nTotal Bill = Rs %.2f\n", total);
+
+
+    	else if (choice == 5)
+    		total = 200 * quantity;
+			printf("\nTotal Bill = Rs %.2f\n", total);
+
+
+    	else if (choice == 6)
+    		total = 100 * quantity;
+        	printf("\nTotal Bill = Rs %.2f\n", total);
+
+
+    	else
+            printf("Thank you for visiting!\n");
+}
+// MAIN FUNCTION
+int main()
+{
+	int option;
+    char cont;
+
+     do {
+        printf("\n====== HOTEL MANAGEMENT SYSTEM ======\n");
+        printf("1. Room Registration\n");
+        printf("2. Food Order\n");
+        printf("3. Exit\n");
+
+        printf("Enter your option: ");
+        scanf("%d", &option);
+
+        if (option == 1)
+            Roomregistration();
+        else if (option == 2)
+            Hotelmenu();
+        else if (option == 3)
+            break;
+        else
+            printf("Invalid option!\n");
+
+        printf("\nDo you want to continue? (y/n): ");
+        scanf(" %c", &cont);
+
+    } while (cont == 'y' || cont == 'Y');
+
+    printf("\nThank you for using the Hotel Management System!\n");
+
+    return 0;
